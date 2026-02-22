@@ -4,6 +4,8 @@ var app = express();
 const mongoose = require("mongoose");
 const port = process.env.PORT || 5000;
 const productHandler = require("./routes/productHandler");
+const url =
+  "mongodb+srv://mmrpcse:sWFiXPmOtFAj23lZ@cluster0.odpbh.mongodb.net/webshop?retryWrites=true&w=majority&appName=Cluster0";
 
 //middleware
 app.use(cors());
@@ -39,3 +41,13 @@ mongoose
     });
   })
   .catch((err) => console.log(err));
+
+// mongoose
+//   .connect(url)
+//   .then(() => {
+//     console.log("Mongoose Connection Successful");
+//     app.listen(port, () => {
+//       console.log(`LowTech Gmbh Webshop is listening on port ${port}`);
+//     });
+//   })
+//   .catch((err) => console.log(err));
